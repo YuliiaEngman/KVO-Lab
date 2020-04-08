@@ -10,9 +10,7 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
     
-    @IBOutlet weak var userNameLabel: UILabel!
-    
-    @IBOutlet weak var userBalanceLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
