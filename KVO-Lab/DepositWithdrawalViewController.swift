@@ -10,11 +10,8 @@ import UIKit
 
 class DepositWithdrawalViewController: UIViewController {
     
-    @IBOutlet weak var depositTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var withdrawalTextField: UITextField!
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
