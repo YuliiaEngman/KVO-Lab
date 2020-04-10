@@ -10,48 +10,57 @@ import UIKit
 
 class DepositWithdrawalViewController: UIViewController {
     
-//    private var users = [User]() {
-//        didSet {
-//            tableView.reloadData()
-//        }
-//    }
+    //    private var users = [User]() {
+    //        didSet {
+    //            tableView.reloadData()
+    //        }
+    //    }
     
     @IBOutlet weak var tableView: UITableView!
+    
+    private var arrayOfUsersObservation: NSKeyValueObservation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
+        tableView.reloadData()
     }
     
     private func configureTableView() {
-           tableView.dataSource = self
-           tableView.delegate = self
-       }
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
 }
 
 extension DepositWithdrawalViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return Accounts.shared.arayOfUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userInfoCell", for: indexPath)
-        //let user = users[indexPath.row]
-        cell.textLabel?.text = "Name"
-        cell.detailTextLabel?.text = "Amount"
+        
+        arrayOfUsersObservation = Accounts.shared.observe(\.arayOfUsers, options: [.new], changeHandler: { [weak self] (settings, change) in
+            let userAccount = change.newValue![indexPath.row]
+            cell.textLabel?.text = userAccount.name
+            cell.detailTextLabel?.text = String(userAccount.balance)
+        })
         return cell
     }
 }
 
 extension DepositWithdrawalViewController: UITableViewDelegate {
-       
-       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           let detailVC = DepositDetailViewController()
-           guard let indexPath = tableView.indexPathForSelectedRow else {
-               fatalError("could not downcast to DepositDetailViewController")
-           
-           navigationController?.pushViewController(detailVC, animated: true)
-       }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DepositDetailViewController()
+        guard let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("could not downcast to DepositDetailViewController")
+            
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
 }
-}
+
+

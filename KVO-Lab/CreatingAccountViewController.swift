@@ -54,9 +54,7 @@ class CreatingAccountViewController: UIViewController {
         User.shared.name = userName
         User.shared.balance = Double(balance) ?? 0.0
         
-        dismiss(animated: true)
+        balanceTextField.resignFirstResponder()
     }
-    
-    
 }
 
