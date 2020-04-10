@@ -42,8 +42,6 @@ extension DepositWithdrawalViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = "Amount"
         return cell
     }
-    
-    
 }
 
 extension DepositWithdrawalViewController: UITableViewDelegate {
