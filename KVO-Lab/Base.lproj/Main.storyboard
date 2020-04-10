@@ -197,23 +197,43 @@
                                     <action selector="createAccountButtonPressed:" destination="rDo-uS-iuN" eventType="touchUpInside" id="xUb-0J-ZUQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Username Observer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKT-ks-H0B">
+                                <rect key="frame" x="20" y="553" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Userbalance Observer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4r-fF-XeZ">
+                                <rect key="frame" x="20" y="634" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="IIw-Tp-U96" firstAttribute="centerX" secondItem="f5K-E8-UWG" secondAttribute="centerX" id="7EJ-rD-uqi"/>
                             <constraint firstItem="DL4-fe-Pzb" firstAttribute="trailing" secondItem="giy-4b-AP9" secondAttribute="trailing" constant="20" id="Ad1-Mg-Xqg"/>
                             <constraint firstItem="giy-4b-AP9" firstAttribute="leading" secondItem="DL4-fe-Pzb" secondAttribute="leading" constant="20" id="IVX-h4-Rl5"/>
+                            <constraint firstItem="d4r-fF-XeZ" firstAttribute="top" secondItem="ZKT-ks-H0B" secondAttribute="bottom" constant="60" id="Ihb-bB-Jbt"/>
+                            <constraint firstItem="DL4-fe-Pzb" firstAttribute="trailing" secondItem="ZKT-ks-H0B" secondAttribute="trailing" constant="20" id="NFJ-MR-RdE"/>
+                            <constraint firstItem="d4r-fF-XeZ" firstAttribute="leading" secondItem="DL4-fe-Pzb" secondAttribute="leading" constant="20" id="QFC-6Z-b89"/>
                             <constraint firstItem="giy-4b-AP9" firstAttribute="top" secondItem="DL4-fe-Pzb" secondAttribute="top" constant="100" id="VNv-yR-2kt"/>
                             <constraint firstItem="UhU-Eb-YEb" firstAttribute="leading" secondItem="DL4-fe-Pzb" secondAttribute="leading" constant="20" id="Vn0-T9-gmT"/>
                             <constraint firstItem="DL4-fe-Pzb" firstAttribute="trailing" secondItem="UhU-Eb-YEb" secondAttribute="trailing" constant="20" id="YWr-QN-MVN"/>
+                            <constraint firstItem="ZKT-ks-H0B" firstAttribute="top" secondItem="IIw-Tp-U96" secondAttribute="bottom" constant="90" id="boZ-YK-Htd"/>
+                            <constraint firstItem="ZKT-ks-H0B" firstAttribute="leading" secondItem="DL4-fe-Pzb" secondAttribute="leading" constant="20" id="dPB-MH-KR0"/>
                             <constraint firstItem="IIw-Tp-U96" firstAttribute="centerY" secondItem="f5K-E8-UWG" secondAttribute="centerY" id="pfe-3k-0bq"/>
                             <constraint firstItem="UhU-Eb-YEb" firstAttribute="top" secondItem="giy-4b-AP9" secondAttribute="bottom" constant="80" id="wGV-YO-uWL"/>
+                            <constraint firstItem="DL4-fe-Pzb" firstAttribute="trailing" secondItem="d4r-fF-XeZ" secondAttribute="trailing" constant="20" id="xWe-WV-fNY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DL4-fe-Pzb"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create Account" id="gsf-Js-0Lm"/>
                     <connections>
                         <outlet property="balanceTextField" destination="UhU-Eb-YEb" id="Cnq-tI-eCg"/>
+                        <outlet property="testUserBalanceObserver" destination="d4r-fF-XeZ" id="l3d-w3-tLN"/>
+                        <outlet property="testUsernameObserver" destination="ZKT-ks-H0B" id="Xk3-Ah-mFW"/>
                         <outlet property="userNameTextField" destination="giy-4b-AP9" id="M2i-Wp-fgs"/>
                     </connections>
                 </viewController>
