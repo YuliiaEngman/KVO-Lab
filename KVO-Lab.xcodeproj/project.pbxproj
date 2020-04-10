@@ -16,6 +16,8 @@
 		0F54219A243D2C7F00CA8771 /* DepositWithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F542199243D2C7F00CA8771 /* DepositWithdrawalViewController.swift */; };
 		0F54219C243D2C9400CA8771 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F54219B243D2C9400CA8771 /* UserInfoViewController.swift */; };
 		0F73E515243E83370019027A /* DepositDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E514243E83370019027A /* DepositDetailViewController.swift */; };
+		0F73E5392440D3FA0019027A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E5382440D3FA0019027A /* User.swift */; };
+		0F73E53B2440D4F30019027A /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F73E53A2440D4F30019027A /* Accounts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		0F542199243D2C7F00CA8771 /* DepositWithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositWithdrawalViewController.swift; sourceTree = "<group>"; };
 		0F54219B243D2C9400CA8771 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		0F73E514243E83370019027A /* DepositDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositDetailViewController.swift; sourceTree = "<group>"; };
+		0F73E5382440D3FA0019027A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0F73E53A2440D4F30019027A /* Accounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accounts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				0F54218E243D2B4200CA8771 /* Assets.xcassets */,
 				0F542190243D2B4200CA8771 /* LaunchScreen.storyboard */,
 				0F542193243D2B4200CA8771 /* Info.plist */,
+				0F73E5382440D3FA0019027A /* User.swift */,
+				0F73E53A2440D4F30019027A /* Accounts.swift */,
 			);
 			path = "KVO-Lab";
 			sourceTree = "<group>";
@@ -148,11 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F73E515243E83370019027A /* DepositDetailViewController.swift in Sources */,
+				0F73E53B2440D4F30019027A /* Accounts.swift in Sources */,
 				0F54218A243D2B3B00CA8771 /* CreatingAccountViewController.swift in Sources */,
 				0F542186243D2B3B00CA8771 /* AppDelegate.swift in Sources */,
 				0F54219C243D2C9400CA8771 /* UserInfoViewController.swift in Sources */,
 				0F54219A243D2C7F00CA8771 /* DepositWithdrawalViewController.swift in Sources */,
 				0F542188243D2B3B00CA8771 /* SceneDelegate.swift in Sources */,
+				0F73E5392440D3FA0019027A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
