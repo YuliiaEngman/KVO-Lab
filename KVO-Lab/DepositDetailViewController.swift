@@ -72,6 +72,17 @@ class DepositDetailViewController: UIViewController {
     
     @IBAction func withdrawButtonPressed(_ sender: UIButton) {
         // - substracting from the balance
+        
+        let oldUserBalance = User.shared.balance
+        
+        guard let withdrawal = amountTextField.text, !withdrawal.isEmpty else {
+                    print("missing fields")
+                    return
+                    }
+        
+        User.shared.balance = oldUserBalance - Double(withdrawal)!
+
+        amountTextField.resignFirstResponder()
     }
     
 }
