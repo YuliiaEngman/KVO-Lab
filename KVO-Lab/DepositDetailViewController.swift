@@ -12,37 +12,63 @@ class DepositDetailViewController: UIViewController {
     
     @IBOutlet weak var amountTextField: UITextField!
     
+    @IBOutlet weak var testingUserNameLabel: UILabel!
+    @IBOutlet weak var testingNewBalanceLabel: UILabel!
+    
+    
     // I need observation here as well to know from what balance to substract or add
+    private var testUsernameObserver: NSKeyValueObservation?
     private var balanceObservation: NSKeyValueObservation?
     
     // I need pass user here too - that we will reffer to the same user
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //configureUserBalanceObservation()
+        
+        configureUserNameObservation()
+        configureUserBalanceObservation()
     }
     
-//    private func configureUserBalanceObservation() {
-//        balanceObservation = User.shared.observe(\.balance, options: [.old], changeHandler: { [weak self](settings, change) in
-//            let userBalance = change.oldValue
-//        })
-//    }
+    private func configureUserNameObservation() {
+        balanceObservation = User.shared.observe(\.balance, options: [.new], changeHandler: { [weak self](settings, change) in
+            guard let userName = change.newValue else { return }
+            self?.testingUserNameLabel.text = String(userName)
+        })
+    }
+
+    
+    private func configureUserBalanceObservation() {
+        balanceObservation = User.shared.observe(\.balance, options: [.new], changeHandler: { [weak self](settings, change) in
+            guard let userBalance = change.newValue else { return }
+            self?.testingNewBalanceLabel.text = String(userBalance)
+        })
+    }
     
     @IBAction func depositButtonPressed(_ sender: UIButton) {
-        // + addint to the balance
-        balanceObservation = User.shared.observe(\.balance, options: [.old], changeHandler: { [weak self](settings, change) in
-            guard let oldUserBalance = change.oldValue else { return }
-            
-            guard let deposit = self?.amountTextField.text, !deposit.isEmpty else {
-            print("missing fields")
-            return
-            }
-            
-            User.shared.balance = oldUserBalance + Double(deposit)!
-            
-            self?.amountTextField.resignFirstResponder()
-    })
+//        // + adding to the balance
+////        balanceObservation = User.shared.observe(\.balance, options: [.old], changeHandler: { [weak self](settings, change) in
+////            guard let oldUserBalance = change.oldValue else { return }
+//
+//            guard let deposit = amountTextField.text, !deposit.isEmpty else {
+//            print("missing fields")
+//            return
+//            }
+//
+//        User.shared.balance = Double(deposit) ?? 0.0
+//
+//            amountTextField.resignFirstResponder()
+        let oldUserBalance = User.shared.balance
+        
+        guard let deposit = amountTextField.text, !deposit.isEmpty else {
+                    print("missing fields")
+                    return
+                    }
+        
+        User.shared.balance = oldUserBalance + Double(deposit)!
+
+        amountTextField.resignFirstResponder()
     }
+
     
     @IBAction func withdrawButtonPressed(_ sender: UIButton) {
         // - substracting from the balance

@@ -94,21 +94,40 @@
                                     <action selector="withdrawButtonPressed:" destination="cnQ-jx-C40" eventType="touchUpInside" id="jQ0-i1-LhC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testing User New Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftq-vf-Hbk">
+                                <rect key="frame" x="107" y="410.5" width="200" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testing USer Name Observation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOk-EP-eFF">
+                                <rect key="frame" x="20" y="334" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xN4-X6-CBG" firstAttribute="leading" secondItem="ZdC-EF-aqK" secondAttribute="leading" constant="20" id="8fx-lT-PzY"/>
                             <constraint firstItem="ZdC-EF-aqK" firstAttribute="trailing" secondItem="xN4-X6-CBG" secondAttribute="trailing" constant="20" id="BYi-Ai-bW8"/>
                             <constraint firstItem="ZdC-EF-aqK" firstAttribute="trailing" secondItem="Yzv-Ks-yY6" secondAttribute="trailing" constant="20" id="DeR-Zl-5X1"/>
+                            <constraint firstItem="Ftq-vf-Hbk" firstAttribute="centerY" secondItem="9cu-g6-fZM" secondAttribute="centerY" id="Nbx-uS-eKu"/>
+                            <constraint firstItem="Ftq-vf-Hbk" firstAttribute="centerX" secondItem="9cu-g6-fZM" secondAttribute="centerX" id="Wxw-fJ-Isg"/>
                             <constraint firstItem="xN4-X6-CBG" firstAttribute="top" secondItem="ZdC-EF-aqK" secondAttribute="top" constant="80" id="aBp-5n-QLa"/>
                             <constraint firstItem="Wwm-BR-jnV" firstAttribute="leading" secondItem="ZdC-EF-aqK" secondAttribute="leading" constant="20" id="ah8-0T-Hrd"/>
+                            <constraint firstItem="ZdC-EF-aqK" firstAttribute="trailing" secondItem="KOk-EP-eFF" secondAttribute="trailing" constant="20" id="fAX-1I-PwW"/>
                             <constraint firstItem="Wwm-BR-jnV" firstAttribute="top" secondItem="xN4-X6-CBG" secondAttribute="bottom" constant="100" id="fGu-Xs-e4E"/>
+                            <constraint firstItem="KOk-EP-eFF" firstAttribute="leading" secondItem="ZdC-EF-aqK" secondAttribute="leading" constant="20" id="mCD-rE-jfl"/>
                             <constraint firstItem="Yzv-Ks-yY6" firstAttribute="centerY" secondItem="Wwm-BR-jnV" secondAttribute="centerY" id="nDU-j7-UVr"/>
+                            <constraint firstItem="KOk-EP-eFF" firstAttribute="top" secondItem="Wwm-BR-jnV" secondAttribute="bottom" constant="90" id="rOc-dO-Wse"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZdC-EF-aqK"/>
                     </view>
                     <connections>
                         <outlet property="amountTextField" destination="xN4-X6-CBG" id="RxW-7h-k7x"/>
+                        <outlet property="testingNewBalanceLabel" destination="Ftq-vf-Hbk" id="vOV-jm-Hnm"/>
+                        <outlet property="testingUserNameLabel" destination="KOk-EP-eFF" id="Zvq-zF-Dzm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBx-ob-Ta7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
