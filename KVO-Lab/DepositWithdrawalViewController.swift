@@ -51,7 +51,7 @@ extension DepositWithdrawalViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userInfoCell", for: indexPath)
         
-        arrayOfUsersObservation = Accounts.shared.observe(\.arrayOfUsers, options: [.new], changeHandler: { [weak self] (settings, change) in
+        arrayOfUsersObservation = Accounts.shared.observe(\.arrayOfUsers, options: [.new], changeHandler: { (settings, change) in
             let userAccount = change.newValue![indexPath.row]
             cell.textLabel?.text = userAccount.name
             cell.detailTextLabel?.text = String(userAccount.balance)

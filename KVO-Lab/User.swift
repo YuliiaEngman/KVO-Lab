@@ -12,11 +12,11 @@ import Foundation
 // @objc + inherit from NSOblect
 @objc class User: NSObject {
     static var shared = User()
-    @objc dynamic var name: String
-    @objc dynamic var balance: Double
+    @objc dynamic var name: String = ""
+    @objc dynamic var balance: Double = 0.0
 // changed override private init() to:
-    override init() {
-        name = ""
-        balance = 0.0
-    }
+//    override init() {
+//        name = ""
+//        balance = 0.0
+//    }
 }

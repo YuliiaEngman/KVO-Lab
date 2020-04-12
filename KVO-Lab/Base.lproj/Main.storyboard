@@ -228,6 +228,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Array of users label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yi-Vc-egT">
+                                <rect key="frame" x="20" y="727" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -250,6 +257,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Create Account" id="gsf-Js-0Lm"/>
                     <connections>
+                        <outlet property="arrayOfUsersLabel" destination="8Yi-Vc-egT" id="eQK-Ov-Sfi"/>
                         <outlet property="balanceTextField" destination="UhU-Eb-YEb" id="Cnq-tI-eCg"/>
                         <outlet property="testUserBalanceObserver" destination="d4r-fF-XeZ" id="l3d-w3-tLN"/>
                         <outlet property="testUsernameObserver" destination="ZKT-ks-H0B" id="Xk3-Ah-mFW"/>

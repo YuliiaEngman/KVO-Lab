@@ -12,8 +12,8 @@ import Foundation
 // @objc + inherit from NSOblect
 @objc class Accounts: NSObject {
     static var shared = Accounts()
-    @objc dynamic var arrayOfUsers: [User]
-    override private init() {
-        arrayOfUsers = []
-    }
+    @objc dynamic var arrayOfUsers = [User]()
+//    override init() {
+//        arrayOfUsers = []
+//    }
 }
