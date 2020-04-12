@@ -14,7 +14,8 @@ import Foundation
     static var shared = User()
     @objc dynamic var name: String
     @objc dynamic var balance: Double
-    override private init() {
+// changed override private init() to:
+    override init() {
         name = ""
         balance = 0.0
     }

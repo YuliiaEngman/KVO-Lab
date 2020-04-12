@@ -21,6 +21,8 @@ class CreatingAccountViewController: UIViewController {
     private var userObservation: NSKeyValueObservation?
     private var balanceObservation: NSKeyValueObservation?
     
+    let user = User()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +46,7 @@ class CreatingAccountViewController: UIViewController {
     
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
+        //let user = User()
         guard let userName = userNameTextField.text, !userName.isEmpty,
             let balance = balanceTextField.text, !balance.isEmpty
             else {
@@ -52,7 +55,11 @@ class CreatingAccountViewController: UIViewController {
         }
         
         User.shared.name = userName
+        //user.name = userName
         User.shared.balance = Double(balance) ?? 0.0
+        //user.balance = Double(balance) ?? 0.0
+       
+        Accounts.shared.arrayOfUsers.append(user)
         
         balanceTextField.resignFirstResponder()
     }

@@ -10,11 +10,12 @@ import UIKit
 
 class DepositWithdrawalViewController: UIViewController {
     
-    //    private var users = [User]() {
-    //        didSet {
-    //            tableView.reloadData()
-    //        }
-    //    }
+    // is it array of Users or Accounts?
+        private var arrayOfUsers = [User]() {
+            didSet {
+                tableView.reloadData()
+            }
+        }
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,27 +25,33 @@ class DepositWithdrawalViewController: UIViewController {
         super.viewDidLoad()
         
         configureTableView()
-        tableView.reloadData()
+        //tableView.reloadData()
+        loadData()
     }
     
     private func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    private func loadData() {
+        arrayOfUsers = Accounts.shared.arrayOfUsers
+    }
+    
 }
 
 extension DepositWithdrawalViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return Accounts.shared.arayOfUsers.count
-    
-        return 10
+       
+        //return Accounts.shared.arrayOfUsers.count
+        return arrayOfUsers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userInfoCell", for: indexPath)
         
-        arrayOfUsersObservation = Accounts.shared.observe(\.arayOfUsers, options: [.new], changeHandler: { [weak self] (settings, change) in
+        arrayOfUsersObservation = Accounts.shared.observe(\.arrayOfUsers, options: [.new], changeHandler: { [weak self] (settings, change) in
             let userAccount = change.newValue![indexPath.row]
             cell.textLabel?.text = userAccount.name
             cell.detailTextLabel?.text = String(userAccount.balance)
