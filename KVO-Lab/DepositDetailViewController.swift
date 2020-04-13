@@ -25,38 +25,30 @@ class DepositDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUserNameObservation()
-        configureUserBalanceObservation()
-    }
-    
-    private func configureUserNameObservation() {
-        balanceObservation = User.shared.observe(\.balance, options: [.new], changeHandler: { [weak self](settings, change) in
-            guard let userName = change.newValue else { return }
-            self?.testingUserNameLabel.text = String(userName)
-        })
-    }
+        // Used this code for my own "visualization":
+        testingUserNameLabel.text = ""
+        testingNewBalanceLabel.text = ""
 
-    
-    private func configureUserBalanceObservation() {
-        balanceObservation = User.shared.observe(\.balance, options: [.new], changeHandler: { [weak self](settings, change) in
-            guard let userBalance = change.newValue else { return }
-            self?.testingNewBalanceLabel.text = String(userBalance)
-        })
+        //        configureUserNameObservation()
+        //        configureUserBalanceObservation()
     }
+    
+//    private func configureUserNameObservation() {
+//        balanceObservation = User.shared.observe(\.balance, options: [.new], changeHandler: { [weak self](settings, change) in
+//            guard let userName = change.newValue else { return }
+//            self?.testingUserNameLabel.text = String(userName)
+//        })
+//    }
+//
+//
+//    private func configureUserBalanceObservation() {
+//        balanceObservation = User.shared.observe(\.balance, options: [.new], changeHandler: { [weak self](settings, change) in
+//            guard let userBalance = change.newValue else { return }
+//            self?.testingNewBalanceLabel.text = String(userBalance)
+//        })
+//    }
     
     @IBAction func depositButtonPressed(_ sender: UIButton) {
-//        // + adding to the balance
-////        balanceObservation = User.shared.observe(\.balance, options: [.old], changeHandler: { [weak self](settings, change) in
-////            guard let oldUserBalance = change.oldValue else { return }
-//
-//            guard let deposit = amountTextField.text, !deposit.isEmpty else {
-//            print("missing fields")
-//            return
-//            }
-//
-//        User.shared.balance = Double(deposit) ?? 0.0
-//
-//            amountTextField.resignFirstResponder()
         let oldUserBalance = User.shared.balance
         
         guard let deposit = amountTextField.text, !deposit.isEmpty else {
@@ -71,7 +63,6 @@ class DepositDetailViewController: UIViewController {
 
     
     @IBAction func withdrawButtonPressed(_ sender: UIButton) {
-        // - substracting from the balance
         
         let oldUserBalance = User.shared.balance
         
@@ -84,7 +75,6 @@ class DepositDetailViewController: UIViewController {
 
         amountTextField.resignFirstResponder()
     }
-    
 }
 
 

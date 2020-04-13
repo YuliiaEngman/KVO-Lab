@@ -13,7 +13,4 @@ import Foundation
 @objc class Accounts: NSObject {
     static var shared = Accounts()
     @objc dynamic var arrayOfUsers = [User]()
-//    override init() {
-//        arrayOfUsers = []
-//    }
 }

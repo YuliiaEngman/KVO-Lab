@@ -17,40 +17,47 @@ class CreatingAccountViewController: UIViewController {
     @IBOutlet weak var testUserBalanceObserver: UILabel!
     @IBOutlet weak var arrayOfUsersLabel: UILabel!
     
-    private var userObservation: NSKeyValueObservation?
-    private var balanceObservation: NSKeyValueObservation?
-    
-    private var arrayOfUsersObservation: NSKeyValueObservation?
+//    private var userObservation: NSKeyValueObservation?
+//    private var balanceObservation: NSKeyValueObservation?
+//    private var arrayOfUsersObservation: NSKeyValueObservation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUserNameObservation()
-        configureUserBalanceObservation()
+        testUsernameObserver.text = ""
+        testUserBalanceObserver.text = ""
+        arrayOfUsersLabel.text = ""
         
-        configureUserArrayObservation()
+        // Code bellow used for myself to "visualize" the code:
+        testUsernameObserver.text = ""
+        testUserBalanceObserver.text = ""
+        arrayOfUsersLabel.text = ""
+        
+//        configureUserNameObservation()
+//        configureUserBalanceObservation()
+//        configureUserArrayObservation()
     }
     
-    private func configureUserNameObservation() {
-        userObservation = User.shared.observe(\.name, options: [.new], changeHandler: { [weak self](settings, change) in
-            guard let userName = change.newValue else { return }
-            self?.testUsernameObserver.text = userName
-        })
-    }
-    
-    private func configureUserBalanceObservation() {
-           balanceObservation = User.shared.observe(\.balance, options: [.new], changeHandler: { [weak self](settings, change) in
-               guard let userBalance = change.newValue else { return }
-               self?.testUserBalanceObserver.text = String(userBalance)
-           })
-       }
-    
-    private func configureUserArrayObservation() {
-        arrayOfUsersObservation = Accounts.shared.observe(\.arrayOfUsers, options: [.old, .new], changeHandler: { [weak self](settings, change) in
-            guard let usersArray = change.newValue else { return }
-            self?.arrayOfUsersLabel.text = (usersArray.last?.name ?? "name") + " " + String(usersArray.last?.balance.description ?? "00")
-        })
-    }
+//    private func configureUserNameObservation() {
+//        userObservation = User.shared.observe(\.name, options: [.new], changeHandler: { [weak self](settings, change) in
+//            guard let userName = change.newValue else { return }
+//            self?.testUsernameObserver.text = userName
+//        })
+//    }
+//
+//    private func configureUserBalanceObservation() {
+//           balanceObservation = User.shared.observe(\.balance, options: [.new], changeHandler: { [weak self](settings, change) in
+//               guard let userBalance = change.newValue else { return }
+//               self?.testUserBalanceObserver.text = String(userBalance)
+//           })
+//       }
+//
+//    private func configureUserArrayObservation() {
+//        arrayOfUsersObservation = Accounts.shared.observe(\.arrayOfUsers, options: [.old, .new], changeHandler: { [weak self](settings, change) in
+//            guard let usersArray = change.newValue else { return }
+//            self?.arrayOfUsersLabel.text = (usersArray.last?.name ?? "name") + " " + String(usersArray.last?.balance.description ?? "00")
+//        })
+//    }
     
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
