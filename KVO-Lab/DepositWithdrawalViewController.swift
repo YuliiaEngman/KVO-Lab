@@ -16,6 +16,7 @@ class DepositWithdrawalViewController: UIViewController {
     
     private var arrayOfUsers =  Accounts.shared.arrayOfUsers {
         didSet {
+            
             tableView.reloadData()
         }
     }
@@ -37,7 +38,7 @@ class DepositWithdrawalViewController: UIViewController {
     }
     
     private func configureUserArrayObservation() {
-        arrayOfUsersObservation = Accounts.shared.observe(\.arrayOfUsers, options: [.old, .new], changeHandler: { [weak self](settings, change) in
+        arrayOfUsersObservation = Accounts.shared.observe(\.arrayOfUsers, options: [.new], changeHandler: { [weak self](settings, change) in
             guard let usersArray = change.newValue else { return }
             self?.arrayOfUsers = usersArray
         })
